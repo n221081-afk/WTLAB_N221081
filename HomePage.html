@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EventNest</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
 
     <style>
         :root {
@@ -187,6 +188,8 @@
             }
         }
     </style>
+   
+
 </head>
 
 <body>
@@ -205,10 +208,14 @@
         <div class="hero-content">
             <h2>Gather Here for New Experience</h2>
             <p>Discover, register, and experience the best technical, cultural events happening on campus.</p>
+            <p id="welcomeMsg"></p>
 
-            <a href="#" class="cta-btn">Register Now</a>
-            <a href="#" class="cta-btn">View Events</a>
+            <button class="cta-btn" id="registerBtn">Register Now</button>
 
+            <p id="participantInfo"></p>
+            <p id="eventInfo"></p>
+
+             
             <div class="countdown">
                 <div class="time-box">
                     <h3>12</h3>
@@ -270,6 +277,77 @@
     <footer>
         <p> 2025 Zest | EventNest</p>
     </footer>
+     <script> 
 
+const eventName = "ZEST 2025";
+ 
+let participantCount = 3000;
+ 
+console.log("Event:", eventName);
+console.log("Participants:", participantCount);
+
+document.getElementById("participantInfo").innerText =
+  `Current Participants: ${participantCount}`;
+ 
+// eventName = "NEW EVENT";
+ 
+function updateWelcomeMessage(name) {
+  return `Welcome ${name}! Get ready for ${eventName}`;
+}
+ 
+const incrementParticipants = function () {
+  participantCount++;
+  document.getElementById("participantInfo").innerText =
+    `Current Participants: ${participantCount}`;
+};
+ 
+const showAlert = () => {
+  alert("Registration Successful!");
+};
+ 
+
+const eventDetails = {
+  title: "ZEST 2025",
+  location: "College Campus",
+  registrations: participantCount,
+ 
+  addRegistration: function () {
+    this.registrations++;
+    participantCount = this.registrations;
+    console.log(this);
+  }
+};
+ 
+console.log(eventDetails.title);
+console.log(eventDetails["location"]);
+
+document.getElementById("eventInfo").innerText =
+  `${eventDetails.title} | ${eventDetails.location}`;
+ 
+document.getElementById("registerBtn").addEventListener("click", function () {
+  const confirmRegister = confirm("Do you want to register for ZEST 2025?");
+  
+  if (confirmRegister) {
+    const userName = prompt("Enter your name:");
+
+    if (userName) {
+      document.getElementById("welcomeMsg").innerText =
+        updateWelcomeMessage(userName);
+
+      eventDetails.addRegistration();
+      incrementParticipants();
+      showAlert();
+    }
+  }
+});
+ 
+document.getElementById("registerBtn").addEventListener("mouseover", function () {
+  this.style.backgroundColor = "#D70077";
+});
+ 
+document.getElementById("registerBtn").addEventListener("mouseout", function () {
+  this.style.backgroundColor = "";
+});
+</script>
 </body>
 </html>
