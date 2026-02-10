@@ -1,0 +1,2 @@
+START-Appended line in the existed file 
+END
