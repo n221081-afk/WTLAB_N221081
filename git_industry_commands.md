@@ -854,7 +854,7 @@ Example
 git push origin --tags
 
 14. Submodule Commands
-git submodule add
+-git submodule add
 
 Purpose:
 Adds another repository as a submodule.
@@ -862,7 +862,8 @@ Adds another repository as a submodule.
 Example
 
 git submodule add https://github.com/user/library.git
-git submodule init
+
+-git submodule init
 
 Purpose:
 Initializes submodules.
@@ -870,7 +871,8 @@ Initializes submodules.
 Example
 
 git submodule init
-git submodule update
+
+-git submodule update
 
 Purpose:
 Updates submodules.
@@ -878,8 +880,9 @@ Updates submodules.
 Example
 
 git submodule update
-15️⃣ Debugging Commands
-git bisect
+
+15.  Debugging Commands
+-git bisect
 
 Purpose:
 Helps find the commit that introduced a bug.
@@ -887,7 +890,8 @@ Helps find the commit that introduced a bug.
 Example
 
 git bisect
-git bisect start
+
+-git bisect start
 
 Purpose:
 Starts the bisect process.
@@ -895,7 +899,8 @@ Starts the bisect process.
 Example
 
 git bisect start
-git bisect good
+
+-git bisect good
 
 Purpose:
 Marks a commit as good.
@@ -903,7 +908,8 @@ Marks a commit as good.
 Example
 
 git bisect good
-git bisect bad
+
+-git bisect bad
 
 Purpose:
 Marks a commit as bad.
