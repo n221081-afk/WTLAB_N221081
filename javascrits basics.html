@@ -1,0 +1,232 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Startup Website - JavaScript Tasks</title>
+
+<style>
+body{
+font-family: Arial;
+background:#f2f2f2;
+text-align:center;
+}
+
+.container{
+width:70%;
+margin:auto;
+background:white;
+padding:20px;
+border-radius:10px;
+box-shadow:0px 0px 10px gray;
+}
+
+button{
+padding:10px;
+margin:5px;
+cursor:pointer;
+}
+
+#para{
+padding:10px;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1 id="title">Welcome to My Startup 🚀</h1>
+
+<p id="para">Our company builds modern tech products.</p>
+
+<button onclick="changeText()">Change Paragraph</button>
+<button onclick="toggleStyle()">Toggle Style</button>
+<button onclick="askName()">Enter Your Name</button>
+<button onclick="printPage()">Print Page / Save as PDF</button>
+
+<hr>
+
+<h2>Simple Calculator</h2>
+<button onclick="addNumbers()">Addition</button>
+<button onclick="subtractNumbers()">Subtraction</button>
+
+<hr>
+
+<h2>Contact Form</h2>
+
+<form id="contactForm">
+<input type="text" id="username" placeholder="Enter your name"><br><br>
+<input type="email" id="email" placeholder="Enter your email"><br><br>
+<button type="submit">Submit</button>
+</form>
+
+<p id="message"></p>
+
+</div>
+
+<script>
+
+// ======================
+// TASK 1 : VARIABLES
+// ======================
+
+var companyName = "TechNova";
+let founder = "Ammu";
+const year = 2026;
+
+console.log("Company:", companyName);
+console.log("Founder:", founder);
+console.log("Year:", year);
+
+
+// ======================
+// TASK 2 : FUNCTIONS
+// ======================
+
+function greet(){
+console.log("Welcome to our Startup Website!");
+}
+
+greet();
+
+const multiply = (a,b) => a*b;
+
+console.log("Multiplication:", multiply(5,4));
+
+function addNumbers(){
+
+let num1 = Number(prompt("Enter first number"));
+let num2 = Number(prompt("Enter second number"));
+
+let result = num1 + num2;
+
+alert("Addition Result = " + result);
+console.log("Addition:", result);
+
+}
+
+function subtractNumbers(){
+
+let num1 = Number(prompt("Enter first number"));
+let num2 = Number(prompt("Enter second number"));
+
+let result = num1 - num2;
+
+alert("Subtraction Result = " + result);
+console.log("Subtraction:", result);
+
+}
+
+
+// ======================
+// TASK 3 : BUILT-IN FUNCTIONS
+// ======================
+
+alert("Welcome to our Startup Website!");
+
+function askName(){
+
+let name = prompt("Enter your name");
+
+alert("Hello " + name + "! Welcome to our company.");
+
+console.log("User Name:", name);
+
+document.getElementById("title").innerHTML =
+"Welcome " + name + " to My Startup 🚀";
+
+}
+
+
+// ======================
+// TASK 4 : HTML MANIPULATION
+// ======================
+
+function changeText(){
+
+document.getElementById("para").innerHTML =
+"Our startup develops AI, Web Apps, and Cloud Solutions.";
+
+}
+
+
+// ======================
+// TASK 5 : STYLE WITH JAVASCRIPT
+// ======================
+
+let styleToggle = false;
+
+function toggleStyle(){
+
+let element = document.getElementById("para");
+
+if(styleToggle){
+
+element.style.color = "black";
+element.style.fontSize = "16px";
+element.style.background = "white";
+
+}else{
+
+element.style.color = "white";
+element.style.fontSize = "20px";
+element.style.background = "blue";
+
+}
+
+styleToggle = !styleToggle;
+
+}
+
+
+// ======================
+// TASK 6 : EVENTS
+// ======================
+
+let title = document.getElementById("title");
+
+title.onmouseover = function(){
+title.style.color = "red";
+}
+
+title.onmouseout = function(){
+title.style.color = "black";
+}
+
+document.getElementById("contactForm").addEventListener("submit", function(event){
+
+event.preventDefault();
+
+let name = document.getElementById("username").value;
+let email = document.getElementById("email").value;
+
+if(name === "" || email === ""){
+alert("Please fill all fields");
+return;
+}
+
+console.log("Form submitted");
+console.log("Name:", name);
+console.log("Email:", email);
+
+document.getElementById("message").innerHTML =
+"Thank you " + name + "! We will contact you soon.";
+
+});
+
+
+// ======================
+// TASK 7 : PRINT PAGE
+// ======================
+
+function printPage(){
+window.print();
+}
+
+</script>
+
+</body>
+</html>
+
