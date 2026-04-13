@@ -1,0 +1,151 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+    <title>Attributes</title> 
+ 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
+ 
+    <style> 
+        body { 
+            text-align: center; 
+            font-family: Arial; 
+        } 
+ 
+        nav a { 
+            margin: 10px; 
+            text-decoration: none; 
+            font-weight: bold; 
+            color: black; 
+        } 
+ 
+        nav a:hover { 
+            color: blue; 
+        } 
+ 
+        img { 
+            width: 200px; 
+            height: 200px; 
+            margin: 10px; 
+            border: 2px solid black; 
+        } 
+ 
+        button { 
+            margin: 5px; 
+            padding: 8px 15px; 
+            background: black; 
+            color: white; 
+            border: none; 
+            cursor: pointer; 
+        } 
+ 
+        button:hover { 
+            background: gray; 
+        } 
+    </style> 
+</head> 
+ 
+<body> 
+ 
+<!-- NAVBAR --> 
+<nav> 
+<a href="index.html">Home</a> 
+<a href="selectors.html">Selectors</a> 
+<a href="attributes.html">Attributes</a> 
+<a href="events.html">Events</a> 
+<a href="style.html">Styles</a> 
+<a href="traversing.html">Traversing</a> 
+<a href="effects.html">Effects</a> 
+</nav> 
+ 
+<hr> 
+ 
+<h2>Image Attribute Manipulation</h2> 
+ 
+<!-- Main Image --> 
+<img id="mainImg" src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=200&q=80" alt="Main Image"> 
+ 
+<br> 
+ 
+<!-- Buttons --> 
+<button id="changeImg">Change Image</button> 
+<button id="addBorder">Add Border</button> 
+<button id="removeBorder">Remove Border</button> 
+<button id="getAttr">Get ALT</button> 
+<button id="setAttr">Set ALT</button> 
+<button id="hideImg">Hide</button> 
+<button id="showImg">Show</button> 
+ 
+<hr> 
+ 
+<h3>All Images Gallery</h3> 
+ 
+<!-- Multiple Images --> 
+ 
+ 
+<div id="gallery"> 
+    <img class="imgs" src="https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=200&q=80" alt="Gallery Image 1"> 
+    <img class="imgs" src="https://images.unsplash.com/photo-1516910817567-4ae0e5dfa2ef?auto=format&fit=crop&w=200&q=80" alt="Gallery Image 2"> 
+    <img class="imgs" src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=200&q=80" alt="Gallery Image 3"> 
+</div> 
+ 
+<button id="showAll">Show All Images</button> 
+<button id="hideAll">Hide All Images</button> 
+<button id="changeAll">Change All Images</button> 
+ 
+<script> 
+$(document).ready(function(){ 
+ 
+    // Change main image 
+    $("#changeImg").click(function(){ 
+        $("#mainImg").attr("src","https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=200&q=80"); 
+    }); 
+ 
+    // Add border 
+    $("#addBorder").click(function(){ 
+        $("#mainImg").attr("style","border:5px solid red"); 
+    }); 
+ 
+    // Remove border 
+    $("#removeBorder").click(function(){ 
+        $("#mainImg").removeAttr("style"); 
+    }); 
+ 
+    // Get attribute 
+    $("#getAttr").click(function(){ 
+        alert($("#mainImg").attr("alt")); 
+    }); 
+ 
+    // Set attribute 
+    $("#setAttr").click(function(){ 
+        $("#mainImg").attr("alt","Updated Image"); 
+    }); 
+ 
+    // Hide / Show 
+    $("#hideImg").click(function(){ 
+        $("#mainImg").hide(); 
+    }); 
+ 
+    $("#showImg").click(function(){ 
+        $("#mainImg").show(); 
+    }); 
+ 
+    // Show all images 
+    $("#showAll").click(function(){ 
+        $(".imgs").show(); 
+    }); 
+ 
+    // Hide all images 
+    $("#hideAll").click(function(){ 
+        $(".imgs").hide(); 
+    }); 
+ 
+    // Change all images 
+    $("#changeAll").click(function(){ 
+        $(".imgs").attr("src","https://via.placeholder.com/200/ffff00"); 
+    }); 
+ 
+}); 
+</script> 
+ 
+</body> 
+</html>
